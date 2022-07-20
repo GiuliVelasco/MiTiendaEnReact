@@ -1,4 +1,7 @@
-.iconoNav{
-    width: 30px;
-    height: auto;
+.NavBar {
+    display: flex;
+    justify-content: space-around;
+}
+.logo {
+    width: 150px;
 }

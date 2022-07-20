@@ -1,42 +1,34 @@
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import './NavBar.css'
+import CardWidget from './CardWidget';
 
 const NavBar = () => {
     return (
-        <div className='NavBar'>
-            <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Vino para hablar</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Productos
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <li><a class="dropdown-item" href="#">Vinos tranquilos</a></li>
-                                    <li><a class="dropdown-item" href="#">Vinos espumantes</a></li>
-                                    <li><a class="dropdown-item" href="#">Vinos orgánicos</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="../index.js">Tienda</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="../index.js">Novedades</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="container">
-                        <a class="navbar-brand" href="../index.js">
-                            <img class="iconoNav" src="../imagenes/iconoVPH.png" alt="icono de VPH"></img>
-                        </a>
-                    </div>
-                </div>
-            </nav>
-        </div>
+        <Navbar className="NavBar" bg="light" expand="lg">
+            <Container>
+                <Navbar.Brand href="#home">Vino para hablar</Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="me-auto">
+                        <Nav.Link href="#home">Tienda</Nav.Link>
+                        <Nav.Link href="#link">Novedades</Nav.Link>
+                        <NavDropdown title="Productos" id="basic-nav-dropdown">
+                            <NavDropdown.Item href="#action/3.1">Vinos Tintos</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.2">
+                                Vinos Blancos
+                            </NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.3">Vinos Organicos</NavDropdown.Item>
+                        </NavDropdown>
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+            <div className="logo" >
+                <CardWidget />Mi bodega
+            </div>
+        </Navbar>
     );
 }
 
