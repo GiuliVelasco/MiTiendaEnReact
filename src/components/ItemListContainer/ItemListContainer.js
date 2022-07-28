@@ -1,22 +1,26 @@
-import {useState} from "react"
+import {useState, useEffect} from "react"
 import './ItemListContainer.css'
-import ItemCount from "../ItemCount/ItemCount"
+import ItemList from "../ItemList/ItemList"
+import { data } from "../../mock/FakeApi"
 
 const ItemListContainer = ({saludo}) => {
+    const [listaProductos, setListaProductos] = useState([])
     const[mensaje, setMensaje] = useState(false)
+    const [loading, setLoading] = useState(true)
 
-    //funcion que va a agregar efectivamente mis productos al carrito
-    function agregar(cantidad) {
-        //console.log('Agregaste ' + cantidad + ' prod al carrito') Una forma
-        //console.log(`Agregaste ${cantidad} items al carrito`) //otra forma
-        setMensaje(`Agregaste ${cantidad} items al carrito`) //otra forma
-    }
+    useEffect(()=> {
+        data
+        .then((res) => setListaProductos(res))
+        .catch(() => setMensaje('Hubo un problema con la carga, intente más tarde'))
+        .finally(()=> setLoading(false))
+    }, [])
 
     return (
         <div>
             <h2>{saludo}</h2>
             {mensaje && <p className="text-start">{mensaje}</p>}
-            <ItemCount inicial={1} stock={20} funcionAgregar={agregar}></ItemCount>
+            {/*lista de productos - promesa*/}
+            { loading ? <p>Cargando...</p>  : <ItemList listaProductos={listaProductos}/>}
         </div>
     )
 }
