@@ -1,5 +1,4 @@
 import {useState, useEffect} from "react"
-import './ItemListContainer.css'
 import ItemList from "../ItemList/ItemList"
 import { data } from "../../mock/FakeApi"
 
@@ -20,9 +19,9 @@ const ItemListContainer = ({saludo}) => {
             <h2>{saludo}</h2>
             {mensaje && <p className="text-start">{mensaje}</p>}
             {/*lista de productos - promesa*/}
-            { loading ? <p>Cargando...</p>  : <ItemList listaProductos={listaProductos}/>}
+            {loading ? <p>Cargando...</p>  : <ItemList listaProductos={listaProductos}/>}
         </div>
-    )
+        )
 }
 
 export default ItemListContainer

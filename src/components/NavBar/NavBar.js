@@ -25,7 +25,7 @@ const NavBar = () => {
                     </Nav>
                 </Navbar.Collapse>
             </Container>
-            <div className="logo" >
+            <div className="nav" >
                 <CardWidget />Mi bodega
             </div>
         </Navbar>
