@@ -19,23 +19,20 @@ const ItemDetailContainer = () => {
 
     const getItem = (id) => {
         dataItem
-        .then((res) => setItem(res.filter((item) => item.id === parseInt(id)[0])))
+        .then((res) => setItem(res.find((item) => item.id === parseInt(id))))
         .catch(() => setItem('Hubo un problema con la carga, intente más tarde')
         )
+
     }
 
     useEffect(() => {
-        getItem(id)}, [id])
+        getItem(id)
+    }, [id])
 
     return (
         <div>
             <h1>Item detail container</h1>
-            {item.length !== 0? (
-                <ItemDetail item={item}/>
-            ) : (
-                <h1>Cargando...</h1>
-                )
-            }
+            {item && <ItemDetail item={item}/>}
         </div>)
 }
 
