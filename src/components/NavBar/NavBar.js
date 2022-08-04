@@ -4,6 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import './NavBar.css'
 import CardWidget from '../CardWidget/CardWidget';
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
     return (
@@ -16,11 +17,9 @@ const NavBar = () => {
                         <Nav.Link href="#home">Tienda</Nav.Link>
                         <Nav.Link href="#link">Novedades</Nav.Link>
                         <NavDropdown title="Productos" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Vinos Tintos</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">
-                                Vinos Blancos
-                            </NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Vinos Organicos</NavDropdown.Item>
+                            <Link to="/categoria/vinos tintos">Vinos Tintos</Link><br></br>
+                            <Link to="/categoria/vinos blancos">Vinos Blancos</Link><br></br>
+                            <Link to="/categoria/vinos organicos">Vinos Organicos</Link>
                         </NavDropdown>
                     </Nav>
                 </Navbar.Collapse>
