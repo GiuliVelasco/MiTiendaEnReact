@@ -1,12 +1,20 @@
 import React, {useState} from 'react'
+//import {useNavigate} from 'react-router-dom';
 import ItemCount from "../ItemCount/ItemCount";
 
 const ItemDetail = ( {item} ) => {
-    console.log("este es el item", item);
+    //const navigate = useNavigate()
     const[mensaje, setMensaje] = useState(false)
-    const agregar = (cantidad) => {
-        setMensaje(`Agregaste ${cantidad} items en el carrito`)
+    const [contador, setContador] = useState(0)
+
+    const agregar = (quantityToAdd) => {
+        setMensaje(`Agregaste ${quantityToAdd} items en el carrito`)
+        setContador(quantityToAdd)
+        //navegar al cart
+        //navigate('/cart')
     }
+    console.log(contador,' productos en el carrito')
+    
 
     return (
         <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}>

@@ -16,7 +16,6 @@ const ItemDetailContainer = () => {
     //        .catch((err) => alert("Ha ocurrido un error", err));
     //}, []);
 
-
     const getItem = (id) => {
         dataItem
         .then((res) => setItem(res.find((item) => item.id === parseInt(id))))

@@ -18,6 +18,7 @@ function App() {
         />
         <Route path="/about" element={<h1>About</h1>} />
         <Route path="*" element={<ItemListContainer />} />
+        <Route path='/cart' element={<h1>Carrito</h1>}/>
       </Routes>
     </div>
   );
