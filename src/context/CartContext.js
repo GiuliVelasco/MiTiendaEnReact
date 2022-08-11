@@ -8,22 +8,53 @@ const CartProvider =({ children }) => {
     //const isInCart = {} => {}
 
     //const clearCart = {} => {
-    //    setCart{[]}
+    //    setCart([])
     //}
 
-    //const addToCart =(item, quantity) => {
-    //    setCart([...cart, {...item, quantity}])
-    //}
+    const addToCart =(item, quantity) => {
+        console.log({item, quantity})
+        //verifico si el carrito está vacío
+        if(cart.length === 0) {
+            const itemToAdd = {
+                ...item,
+                quantity: quantity
+            }
+            setCart([itemToAdd])
+            return
+        }
+        //  setCart([...cart, {...item, quantity}])
 
-    //const removeToCart = () => {}
+        // logica de duplicados y consistente
+        const itemDuplicateIndex = cart.findIndex((itemInTheCart) => itemInTheCart.id === item.id)
+        if (itemDuplicateIndex >= 0) {
+            const itemToUpdate = {
+                ...item,
+                quantity: cart[itemDuplicateIndex].quantity + quantity
+            }
+            
+            const cartDraft = [...cart]
+            cartDraft[itemDuplicateIndex] = itemToUpdate
+
+            setCart(cartDraft)
+        }else {
+            const itemToAdd = {
+                ...item,
+                quantity: quantity
+            }
+            const cartDraft = [...cart, itemToAdd]
+            setCart(cartDraft)
+        }
+    }
+
+    const removeToCart = () => {}
 
     const valueToShare = {
         cart, 
         cantInCart: cart.length,
         //isInCart,
-        //addToCart,
-        //cleanCart,
-        //removeToCart
+        addToCart,
+        //clearCart,
+        removeToCart
     }
 
     return (

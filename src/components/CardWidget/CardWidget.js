@@ -4,7 +4,7 @@ import { FaWineBottle } from 'react-icons/fa';
 
 const CardWidget = () => {
     const valueToShare = useContext(CartContext)
-    console.log({valueToShare})
+    console.log('esto tiene el carrito: ',{valueToShare})
     
     return (
         <>

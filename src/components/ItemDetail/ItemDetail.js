@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, { useState, useContext } from 'react'
+import { CartContext } from '../../context/CartContext';
 //import {useNavigate} from 'react-router-dom';
 import ItemCount from "../ItemCount/ItemCount";
 
@@ -6,10 +7,13 @@ const ItemDetail = ( {item} ) => {
     //const navigate = useNavigate()
     const[mensaje, setMensaje] = useState(false)
     const [contador, setContador] = useState(0)
+    const { addToCart } = useContext(CartContext)
 
     const agregar = (quantityToAdd) => {
         setMensaje(`Agregaste ${quantityToAdd} items en el carrito`)
         setContador(quantityToAdd)
+        addToCart(item, quantityToAdd)
+
         //navegar al cart
         //navigate('/cart')
     }
