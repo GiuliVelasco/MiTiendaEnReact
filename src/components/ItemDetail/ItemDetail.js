@@ -17,8 +17,6 @@ const ItemDetail = ( {item} ) => {
         //navegar al cart
         //navigate('/cart')
     }
-    console.log(contador,' productos en el carrito')
-    
 
     return (
         <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}>

@@ -3,13 +3,16 @@ import { CartContext } from '../../context/CartContext';
 import { FaWineBottle } from 'react-icons/fa';
 
 const CardWidget = () => {
-    const valueToShare = useContext(CartContext)
-    console.log('esto tiene el carrito: ',{valueToShare})
+    const { cantInCart } = useContext(CartContext)
     
+    if ( cantInCart === 0){
+        return <></>
+    }
+
     return (
         <>
         <FaWineBottle />
-        <p className='contadorCardWidget'>{valueToShare.cantInCart}</p>
+        <p className='contadorCardWidget'>{cantInCart}</p>
         </>
     );
 }
