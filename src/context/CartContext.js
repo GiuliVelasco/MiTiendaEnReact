@@ -5,7 +5,6 @@ export const CartContext = createContext({})
 const CartProvider =({ children }) => {
     const [cart, setCart] = useState([])
 
-
     const addToCart =(item, quantity) => {
         console.log({item, quantity})
         //verifico si el carrito está vacío
@@ -41,8 +40,8 @@ const CartProvider =({ children }) => {
         }
     }
 
-    const removeToCart = () => {}
     
+
     //mostrar cantidad de items agregados al carrito
         //PRIMER FORMA
     //let cantInCart = 0
@@ -52,19 +51,32 @@ const CartProvider =({ children }) => {
         //SEGUNDA FORMA
     const cantInCart = cart.reduce((previous, item) => previous + item.quantity, 0)
 
-    //const isInCart = {} => {}
+    const isInCart = (id) => cart.find((item) => item.id === id)? true : false
 
-    //const clearCart = {} => {
-    //    setCart([])
-    //}
+    const cleanCart = () => {
+        setCart([])
+    }
+
+    const removeToCart = (id) => {
+        let nono = cart.filter(item => item.id !== id)
+        setCart(nono)
+    }
+    
+    const totalPrice = () => {
+        return cart.reduce((prev, act) => prev + act.quantity * act.precio, 0)
+    }
+
+    //const totalProduct = () => cart.reduce((acumulador, productoActual) => acumulador + productoActual.quantity, 0)
 
     const valueToShare = {
         cart, 
         cantInCart,
-        //isInCart,
+        isInCart,
         addToCart,
-        //clearCart,
-        removeToCart
+        cleanCart,
+        removeToCart,
+        totalPrice,
+        //totalProduct
     }
 
     return (
