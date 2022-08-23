@@ -1,8 +1,8 @@
-import { createContext, useState } from "react";
+import React, { createContext, useState, useContext } from "react";
 
 export const CartContext = createContext({})
 
-const CartProvider =({ children }) => {
+export const CartProvider =({ children }) => {
     const [cart, setCart] = useState([])
 
     const addToCart =(item, quantity) => {
@@ -39,9 +39,7 @@ const CartProvider =({ children }) => {
             setCart(cartDraft)
         }
     }
-
     
-
     //mostrar cantidad de items agregados al carrito
         //PRIMER FORMA
     //let cantInCart = 0
@@ -66,17 +64,8 @@ const CartProvider =({ children }) => {
         return cart.reduce((prev, act) => prev + act.quantity * act.precio, 0)
     }
 
-    //const totalProduct = () => cart.reduce((acumulador, productoActual) => acumulador + productoActual.quantity, 0)
-
     const valueToShare = {
-        cart, 
-        cantInCart,
-        isInCart,
-        addToCart,
-        cleanCart,
-        removeToCart,
-        totalPrice,
-        //totalProduct
+        cart, cantInCart, isInCart, addToCart, cleanCart, removeToCart, totalPrice,
     }
 
     return (
@@ -86,4 +75,4 @@ const CartProvider =({ children }) => {
     )
 }
 
-export default CartProvider
+export const useCart = () => useContext(CartContext)

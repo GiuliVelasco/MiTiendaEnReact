@@ -1,10 +1,12 @@
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
 import { Link } from 'react-router-dom'
 import ItemCart from '../ItemCart/ItemCart';
+import {useNavigate} from 'react-router-dom';
 
 const Cart = () => {
     const { cart, totalPrice, cleanCart } = useContext(CartContext)
+    const navigate = useNavigate()
     
     if (cart.length === 0) {
         
@@ -19,10 +21,11 @@ const Cart = () => {
     return (
         <>
             {cart.map(item => <ItemCart key={item.id} item={item}/>)}
-            <p>
+            <h4>
                 TOTAL: ${totalPrice()}
-            </p>
-            <button onClick={() => cleanCart()}>Vaciar bodega</button>
+            </h4>
+            <button className="d-flex p-2 bg-dark text-white" onClick={() => cleanCart()}>Vaciar bodega</button>
+            <button className="d-flex p-2 bg-dark text-white" onClick={()=> navigate('/checkout')}>Terminar compra</button>
         </>
     )
 }

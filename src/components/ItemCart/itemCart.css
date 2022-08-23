@@ -1,0 +1,6 @@
+.itemCart {
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: 1px solid gray;
+    margin: 1 rem auto;
+}

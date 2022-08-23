@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import ItemDetail from "../ItemDetail/ItemDetail"
 //import { dataItem } from "../../mock/FakeApi"
 import { doc, getFirestore, getDoc } from 'firebase/firestore';
@@ -12,7 +12,7 @@ const ItemDetailContainer = () => {
     
     useEffect(() => {
         const db = getFirestore()
-        const productRef = doc(db, 'items', id)
+        const productRef = doc(db, 'items', id) //trae de mi coleccion items, de mi db(database), los id.
 
         getDoc(productRef)
             .then((snapshot) => {

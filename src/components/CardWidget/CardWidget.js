@@ -1,6 +1,8 @@
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
 import { FaWineBottle } from 'react-icons/fa';
+import './CardWidget.css'
+import {Link} from 'react-router-dom'
 
 const CardWidget = () => {
     const { cantInCart } = useContext(CartContext)
@@ -12,7 +14,7 @@ const CardWidget = () => {
     return (
         <>
         <FaWineBottle />
-        <p className='contadorCardWidget'>{cantInCart}</p>
+        <p className='contadorCardWidget'><Link to='/cart'>{cantInCart}</Link></p>
         </>
     );
 }
