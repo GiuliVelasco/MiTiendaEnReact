@@ -1,0 +1,20 @@
+.estiloTarjeta{
+    width: 20rem;
+    margin: .5rem;
+}
+
+.estiloImg{
+    width: 16rem; 
+    height: 30rem;
+}
+
+.estiloBtn{
+    background-color: rgb(104, 13, 122);
+    border: 2px;
+
+}
+.estiloLink{
+    text-decoration: none;
+    background-color: rgb(104, 13, 122);
+    color: whitesmoke;
+}

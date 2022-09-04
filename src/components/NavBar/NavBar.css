@@ -1,7 +1,21 @@
-.NavBar {
+.NavBar{
     display: flex;
     justify-content: space-around;
+    height: 80px;
 }
-.nav {
+#fondoNav{
+    background-color: #E3C770;
+}
+.nav{
     width: 150px;
+    margin-top: 18px;
+}
+.tituloNav{
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+}
+.subtituloNav{
+    color: black;
+    font-weight: 550;
 }

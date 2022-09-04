@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import {useNavigate} from 'react-router-dom';
 import Button from 'react-bootstrap/Button'
 import Stack from 'react-bootstrap/Stack';
+import "./ItemCount.css"
 
 const ItemCount = ({inicial, stock, funcionAgregar}) => {
     const navigate = useNavigate()
@@ -30,8 +31,9 @@ const ItemCount = ({inicial, stock, funcionAgregar}) => {
                 <Button variant="outline-secondary" onClick={sumar}> + </Button>
             </div>
             <div>
-                <Button variant="secondary" onClick={()=>funcionAgregar(contador)}>Agregar al carrito</Button>
-                <Button variant="secondary" onClick={irAlCarrito}>Terminar compra</Button>
+                <Button className="btnItemCount" variant="secondary" onClick={()=>funcionAgregar(contador)}>Agregar al carrito</Button>
+                <Button className="btnItemCount" variant="secondary" onClick={irAlCarrito}>Ir al carrito</Button>
+                <Button className="btnItemCount" variant="secondary" onClick={()=> navigate('/')}>Volver a la bodega</Button>
             </div>
         </Stack>
         </>

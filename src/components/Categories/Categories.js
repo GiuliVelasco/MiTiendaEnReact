@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {collection, getDocs, getFirestore} from 'firebase/firestore'
 import {Link} from 'react-router-dom'
+import './Categories.css'
 
 export default function Categories() {
     const [categories, setCategories] = useState([])
@@ -22,8 +23,8 @@ export default function Categories() {
     return (
         <>
         {categories.map((el) => (
-            <li className='nav-item' key={el}>
-                <Link to={'/categoria/'+el}>{ el.charAt(0).toUpperCase() + el.slice(1)}</Link><br></br>
+            <li className='nav-item otroEstilo' key={el}>
+                <Link className="categoriasNav" to={'/categoria/'+el}>{ el.charAt(0).toUpperCase() + el.slice(1)}</Link><br></br>
             </li>
         ))}
         </>

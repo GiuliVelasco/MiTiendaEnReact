@@ -10,11 +10,11 @@ const CardWidget = () => {
     if ( cantInCart === 0){
         return <></>
     }
-
+    
     return (
         <>
-        <FaWineBottle />
-        <p className='contadorCardWidget'><Link to='/cart'>{cantInCart}</Link></p>
+        <FaWineBottle className='icono'/>
+        <p ><Link className='contadorCardWidget' to='/cart'>{cantInCart}</Link></p>
         </>
     );
 }

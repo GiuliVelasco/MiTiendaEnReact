@@ -1,12 +1,14 @@
 import { getFirestore, addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import React, { useState } from 'react';
 import { useCart } from '../../context/CartContext';
+import {useNavigate} from 'react-router-dom';
 
 const Checkout = () => {
     const[comprador, setComprador]=useState({})
     const[orderId, setOrderId]=useState('')
     const{cart, totalPrice , cleanCart}=useCart()
     const db = getFirestore()
+    const navigate = useNavigate()
 
     const datosComprador = (e) => {
         setComprador({
@@ -39,7 +41,9 @@ const Checkout = () => {
         <>
         {!orderId 
             ?<div>
-                <h2>Checkout</h2>
+                <h2>Ya casi terminamos!</h2>
+                <p>Ingresa tus datos para completar la compra. Te enviaremos la factura y podrás seguir el estado de tu pedido.</p>
+                <p>*Todos los campos son obligatorios</p>
                 <form onSubmit={finalizarCompra}>
                     <input type='text' placeholder="Nombre completo" name="name" onChange={datosComprador}/>
                     <input type='number' placeholder="Numero de contacto" name="telefone" onChange={datosComprador}/>
@@ -49,8 +53,8 @@ const Checkout = () => {
             </div>
             :<div>
                 <h2>Muchas gracias por tu compra!</h2>
-                <h3>El código de orden es {orderId}</h3>
-                <button>Volver a la home</button>
+                <h3>El código de orden es: {orderId}</h3>
+                <button onClick={()=> navigate('/')}>Volver a la bodeguita</button>
             </div>
         }
         </>

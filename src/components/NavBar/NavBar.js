@@ -8,15 +8,17 @@ import CardWidget from '../CardWidget/CardWidget';
 import Categories from '../Categories/Categories';
 import {Link} from 'react-router-dom'
 
+
 const NavBar = () => {
+    
     return (
-        <Navbar className="NavBar" bg="light" expand="lg">
+        <Navbar className="NavBar" id="fondoNav">
             <Container>
-                <Navbar.Brand><Link to="/">Vino para hablar</Link></Navbar.Brand>
+                <Navbar.Brand><Link className="tituloNav" to="/">VINO PARA HABLAR</Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <NavDropdown title="Productos" id="basic-nav-dropdown">
+                        <NavDropdown className="subtituloNav" title="Productos" id="basic-nav-dropdown">
                             <Categories />
                         </NavDropdown>
                     </Nav>

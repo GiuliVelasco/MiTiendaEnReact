@@ -24,7 +24,8 @@ const Cart = () => {
             <h4>
                 TOTAL: ${totalPrice()}
             </h4>
-            <button className="d-flex p-2 bg-dark text-white" onClick={() => cleanCart()}>Vaciar bodega</button>
+            <button className="d-flex p-2 bg-dark text-white" onClick={()=> navigate('/')}>Seguir comprando</button>
+            <button className="d-flex p-2 bg-dark text-white" onClick={() => cleanCart()}>Vaciar carrito</button>
             <button className="d-flex p-2 bg-dark text-white" onClick={()=> navigate('/checkout')}>Terminar compra</button>
         </>
     )
