@@ -1,0 +1,21 @@
+.sectionTable{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 15rem;
+    margin-right: 15rem;
+}
+.botonesCarrito{
+    margin: 70px;
+    display: flex;
+    justify-content: space-around;
+}
+.btnCart{
+    border: 1px solid rgb(104, 13, 122);
+    border-radius: 5px;
+    color: beige;
+    background-color: rgb(104, 13, 122);
+    opacity: 0.75;
+}
+.valorFinal{
+    font-weight: 600;
+}

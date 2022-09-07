@@ -8,7 +8,7 @@ const Item = ({ producto }) => {
   return (
     
       <div className="card tarjeta estiloTarjeta">
-        <img src={img} className="card-img-top estiloImg" alt={nombre}></img>
+        <img src={img} className="estiloImg" alt={nombre}></img>
         <div className="card-body">
           <h3 className="card-text">{nombre}</h3>
           <p className="card-text">${precio}</p>

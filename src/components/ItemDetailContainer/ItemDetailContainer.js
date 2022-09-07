@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import ItemDetail from "../ItemDetail/ItemDetail"
 import { doc, getFirestore, getDoc } from 'firebase/firestore';
 import { useParams } from "react-router-dom";
+import "./ItemDetailContainer.css"
 
 const ItemDetailContainer = () => {
     const [loading, setLoading] = useState(true)
@@ -23,7 +24,7 @@ const ItemDetailContainer = () => {
 
     return (
         <div>
-            <h1>Te contamos más...</h1>
+            <h2 className="tituloItemDetailCont">Te contamos un poco más acerca de este producto</h2>
             {item && <ItemDetail item={item}/> }
         </div>
     )

@@ -1,0 +1,15 @@
+.btnFinalizar{
+    margin-left: 20px;
+    height: 52px;
+}
+.cuadroForm{
+    height: 50px;
+    margin: 5px;
+}
+.btnRegresar{
+    background-color: #c7990f;
+    color: black;
+    border-color: #c7990f;
+    border-radius: 5px;
+    margin-top: 40px;
+}

@@ -1,11 +1,12 @@
 .estiloTarjeta{
     width: 20rem;
     margin: .5rem;
+    align-items: center;
 }
 
 .estiloImg{
-    width: 16rem; 
-    height: 30rem;
+    width: 6rem; 
+    height: 16rem;
 }
 
 .estiloBtn{

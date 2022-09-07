@@ -4,7 +4,7 @@ Este proyecto fue realizado con [Create React App](https://github.com/facebook/c
 
 ## Demo de navegación en la tienda
 
-![](/gifprueba.gif "")
+![](/gifVinoParaHablar.gif "")
 
 ## Guiones disponibles
 
@@ -16,7 +16,7 @@ Has correr la aplicación en el modo de desarrollo.\
 Abre [http://localhost:3000](http://localhost:3000) para verlo en tu navegador.
 
 La página se volverá a cargar cuando realices cambios\
-También puedes ver errores de pelusa desde la consola.
+También puedes ver posibles errores o comentarios desde la consola.
 
 ### `npm run build`
 
