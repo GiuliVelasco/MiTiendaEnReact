@@ -25,7 +25,7 @@ const ItemDetail = ( {item} ) => {
             
             <Stack direction="horizontal" className="card tarjeta" gap={2} style={{alignSelf:'center', width: '60%', margin: '.5rem'}}>
 
-                <img src={item.img} alt={'${item.img}'} className="card-img-top" style={{width: '20%', height: '400px', margin: '.5rem'}}/>
+                <img src={item.img} alt={'${item.img}'} className="card-img-top" style={{width: '15%', height: '400px', margin: '1rem'}}/>
                 <div className="card-body">
                     <h2 className="card-text estiloh2">{item.nombre}</h2>
                     <p className="card-text">{item.descripcion}</p>
